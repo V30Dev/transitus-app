@@ -1,58 +1,70 @@
+import { useState } from "react";
 import "./MainHeader.css";
 import LOGO from "/transitus.png";
 
 function MainHeader() {
-  const relativeRoute = window.location.pathname;
+	const [showSidebar, setShowSidebar] = useState<boolean>(false)
+	const relativeRoute = window.location.pathname;
 
-  const MENU = [
-    {
-      label: "Sendero",
-      link: "/",
-    },
-    {
-      label: "Bitacora",
-      link: "/bitacora",
-    },
-    {
-      label: "Momento de prueba",
-      link: "/momento-de-prueba",
-    },
-    {
-      label: "Códice",
-      link: "/codice",
-    },
-  ];
+	const MENU = [
+		{
+			label: "The Path",
+			link: "/",
+		},
+		{
+			label: "Journal",
+			link: "/journal",
+		},
+		{
+			label: "Trial Point",
+			link: "/trial-point",
+		},
+		{
+			label: "Codex",
+			link: "/codex",
+		},
+	];
 
-  return (
-    <header className="main_header">
-      <div className="main_header__container">
-        <div className="main_header__logo">
-          <img src={LOGO} alt="Transitus logo" />
-          <span>TRANSITUS</span>
-        </div>
+	const handleShowSidebar = () => {
+		console.log(showSidebar)
+		setShowSidebar(prev => !prev)
+	}
 
-        <nav className="main_header__nav">
-          {MENU.map((el) => (
-            <a
-              key={el.label}
-              className={el.link === relativeRoute ? "active" : ""}
-              href={el.link}
-            >
-              {el.label}
-            </a>
-          ))}
-        </nav>
 
-        <div className="main_header__user_card">
-          <div>
-            <span>Nómada consciente</span>
-            <span>Racha: 18 días</span>
-          </div>
-          <img src={LOGO} alt="avatar usuario" />
-        </div>
-      </div>
-    </header>
-  );
+	return (
+		<header className="main_header">
+			<div className="main_header__container">
+				<div className="main_header__hamburguer" onClick={handleShowSidebar}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+				</div>
+
+				<div className="main_header__logo">
+					<img src={LOGO} alt="Transitus logo" />
+					<span>TRANSITUS</span>
+				</div>
+
+				<nav className="main_header__nav">
+					{MENU.map((el) => (
+						<a
+							key={el.label}
+							className={el.link === relativeRoute ? "active" : ""}
+							href={el.link}
+						>
+							{el.label}
+						</a>
+					))}
+				</nav>
+
+				<div className="main_header__user_card">
+					<div>
+						<span>Mindful Nomad</span>
+						<span>18-Day Streak</span>
+					</div>
+					<img src={LOGO} alt="avatar usuario" />
+				</div>
+			</div>
+		</header>
+	);
 }
 
 export default MainHeader;
