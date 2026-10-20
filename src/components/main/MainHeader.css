@@ -29,23 +29,6 @@
 	}
 }
 
-.main_header__logo {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-
-	img {
-		width: 32px;
-	}
-
-	span {
-		font-size: 22px;
-		font-weight: 500;
-		font-family: "Playfair Display", serif;
-		color: #f2be71;
-	}
-}
-
 .main_header__nav {
 	display: none;
 	align-items: center;
