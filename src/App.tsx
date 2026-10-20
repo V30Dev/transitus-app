@@ -1,13 +1,15 @@
 import './App.css'
-import MainHeader from './components/main/MainHeader'
+import { MainFooter } from './components/main/MainFooter'
+import { MainHeader } from './components/main/MainHeader'
 
 function App() {
 
-  return (
-    <>
-      <MainHeader/>
-    </>
-  )
+	return (
+		<>
+			<MainHeader />
+			<MainFooter />
+		</>
+	)
 }
 
 export default App
