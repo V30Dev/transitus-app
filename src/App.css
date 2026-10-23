@@ -1,0 +1,10 @@
+.main_page_container {
+	position: relative;
+	padding: 1.5rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+	.main_page_container {
+		min-height: calc(100vh - 10rem);
+	}
+}

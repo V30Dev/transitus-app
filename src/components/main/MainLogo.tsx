@@ -1,4 +1,4 @@
-import './MainLogo.css'
+import styles from './MainLogo.module.css'
 import LOGO from "/transitus.png";
 
 interface MainLogoProps {
@@ -7,7 +7,7 @@ interface MainLogoProps {
 
 export function MainLogo({ showIcon = false }: MainLogoProps) {
 	return (
-		<div className="main_logo">
+		<div className={styles.main_logo}>
 			{showIcon && <img src={LOGO} alt="Transitus logo" />}
 			<span>TRANSITUS</span>
 		</div>

@@ -1,7 +1,11 @@
-import './MainFooter.css'
+import styles from './MainFooter.module.css'
 import MainLogo from "./MainLogo";
 
-export function MainFooter() {
+interface Props {
+	showNav?: boolean
+}
+
+export function MainFooter({ showNav = true }: Props) {
 
 	const MENU = [
 		{
@@ -23,21 +27,26 @@ export function MainFooter() {
 	];
 
 	return (
-		<footer className="main_footer">
-			<div className="main_footer__container">
+		<footer className={styles.main_footer}>
+			<div className={styles.main_footer__container}>
 				<MainLogo />
-				<nav className='main_footer__nav'>
-					{MENU.map(el => (
-						<a
-							key={el.label}
-							href={el.link}
-						>
-							<small>
-								{el.label}
-							</small>
-						</a>
-					))}
-				</nav>
+				{
+					showNav && (
+						<nav className={styles.main_footer__nav}>
+							{MENU.map(el => (
+								<a
+									key={el.label}
+									href={el.link}
+								>
+									<small>
+										{el.label}
+									</small>
+								</a>
+							))}
+						</nav>
+					)
+				}
+
 				<small>© 2025 Transitus.</small>
 			</div>
 		</footer>
