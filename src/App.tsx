@@ -1,13 +1,11 @@
 import './App.css'
-import { MainFooter } from './components/main/MainFooter'
-import { MainHeader } from './components/main/MainHeader'
+import { SignIn } from './pages/SignIn'
 
 function App() {
 
 	return (
 		<>
-			<MainHeader />
-			<MainFooter />
+			<SignIn />
 		</>
 	)
 }
