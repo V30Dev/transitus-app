@@ -2,6 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-height: calc(100vh - 6rem);
 }
 
 .background_svg {
@@ -77,4 +78,11 @@
 
 .form {
 	margin: 24px 0;
+}
+
+
+@media (min-width: 768px) {
+	.sign_in {
+		min-height: calc(100vh - 10rem);
+	}
 }
